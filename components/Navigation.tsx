@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
+import Image from "next/image";
 
 // ============================================
 // NAVIGATION COMPONENT
@@ -69,10 +70,12 @@ export default function Navigation() {
                         className="cursor-pointer"
                         onClick={() => scrollToSection("#home")}
                     >
-                        <img
-                            src="/portfolio/af-logo.png"
+                        <Image
+                            src="/af-logo.png"
                             alt="AF Logo"
                             className="h-10 w-auto"
+                            width={40} // Added width for Next.js Image component
+                            height={40} // Added height for Next.js Image component
                         />
                     </motion.div>
 

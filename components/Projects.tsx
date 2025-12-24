@@ -28,7 +28,7 @@ const projects = [
         github: "https://github.com/aramishf/portfolio",
         featured: true,
         gradient: "from-green-600 to-emerald-600",
-        image: "/portfolio/projects/rag-assistant.png",
+        image: "/projects/rag-assistant.png",
     },
     {
         title: "Aerosol Particle ML Predictor",
@@ -44,7 +44,7 @@ const projects = [
         github: "#",
         featured: false,
         gradient: "from-emerald-600 to-teal-600",
-        image: "/portfolio/projects/cpc-predictor.png",
+        image: "/projects/cpc-predictor.png",
     },
     {
         title: "Custom PCB Audio Amplifier",
@@ -60,7 +60,7 @@ const projects = [
         github: "#",
         featured: false,
         gradient: "from-teal-600 to-cyan-600",
-        image: "/portfolio/projects/pcb-amplifier.jpg",
+        image: "/projects/pcb-amplifier.jpg",
     },
     {
         title: "Hardware Logic & FSMs",
@@ -76,7 +76,7 @@ const projects = [
         github: "#",
         featured: false,
         gradient: "from-teal-600 to-green-700",
-        image: "/portfolio/projects/basys3-fpga.png",
+        image: "/projects/basys3-fpga.png",
     },
 ];
 
