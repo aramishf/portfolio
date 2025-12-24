@@ -4,19 +4,18 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { SiPython, SiReact, SiTypescript, SiNextdotjs, SiFastapi, SiDocker } from "react-icons/si";
+import Image from "next/image";
 
 const projects = [
     {
         title: "RAG-Based Document Analysis System",
         subtitle: "AI Research Assistant",
         description:
-            "Full-stack AI research assistant that allows users to upload PDF documents and ask complex questions while receiving accurate, citation-backed answers using Retrieval-Augmented Generation (RAG).",
+            "AI research assistant for PDF analysis with citation-backed answers using RAG architecture and local LLM inference.",
         highlights: [
-            "Implemented RAG architecture with FAISS vector database for semantic search",
-            "Integrated LLaMA 3 via Ollama for local LLM inference",
-            "Designed strict prompts to prevent hallucinations and force evidence-based responses",
-            "Built multi-user authentication system with JWT",
-            "Created real-time chat interface with instant citation tooltips",
+            "RAG architecture with FAISS vector database and LLaMA 3 integration",
+            "Multi-user authentication with JWT and real-time chat interface",
+            "Strict prompting to prevent hallucinations and ensure evidence-based responses",
         ],
         tech: [
             { name: "Next.js", icon: SiNextdotjs },
@@ -28,39 +27,56 @@ const projects = [
         ],
         github: "https://github.com/aramishf/portfolio",
         featured: true,
-        gradient: "from-purple-500 to-blue-500",
+        gradient: "from-green-600 to-emerald-600",
+        image: "/portfolio/projects/rag-assistant.png",
     },
     {
         title: "Aerosol Particle ML Predictor",
         subtitle: "Research Application",
         description:
-            "GUI-based application that predicts particle concentration based on environmental variables using machine learning models.",
+            "ML-powered GUI application predicting atmospheric particle concentrations from environmental variables.",
         highlights: [
-            "Developed LSTM and XGBoost models for time-series prediction",
-            "Built intuitive Tkinter GUI for non-technical users",
-            "Processed multi-instrument data from ARM Observatories",
-            "Achieved high accuracy in predicting concentrations (10 nm – 3 μm)",
+            "LSTM and XGBoost models for time-series aerosol prediction (10 nm – 3 μm)",
+            "Intuitive Tkinter GUI for real-time predictions from atmospheric data",
+            "Processed multi-instrument datasets from ARM Observatories",
         ],
         tech: [{ name: "Python", icon: SiPython }],
         github: "#",
         featured: false,
-        gradient: "from-blue-500 to-cyan-500",
+        gradient: "from-emerald-600 to-teal-600",
+        image: "/portfolio/projects/cpc-predictor.png",
+    },
+    {
+        title: "Custom PCB Audio Amplifier",
+        subtitle: "Hardware Design & Fabrication",
+        description:
+            "End-to-end PCB design and fabrication with analog frequency control and gain tuning.",
+        highlights: [
+            "Complete circuit design in KiCad with optimized trace routing",
+            "AC coupling, biasing, and impedance matching for clean amplification",
+            "Hand-soldered and debugged to achieve functional speaker output",
+        ],
+        tech: [],
+        github: "#",
+        featured: false,
+        gradient: "from-teal-600 to-cyan-600",
+        image: "/portfolio/projects/pcb-amplifier.jpg",
     },
     {
         title: "Hardware Logic & FSMs",
         subtitle: "Digital Systems Design",
         description:
-            "Design and implementation of Finite State Machines and arithmetic circuits on FPGA hardware.",
+            "FPGA-based implementation of Finite State Machines and arithmetic circuits.",
         highlights: [
-            "Designed complex FSMs for real-world applications",
-            "Implemented Carry-Lookahead and Ripple-Carry Adders",
-            "Synthesized and tested on Basys3 FPGA board",
-            "Optimized for timing and resource utilization",
+            "Complex FSM design for real-world control applications",
+            "Carry-Lookahead and Ripple-Carry Adder implementations",
+            "Synthesized and optimized on Basys3 FPGA for timing and resources",
         ],
         tech: [],
         github: "#",
         featured: false,
-        gradient: "from-cyan-500 to-green-500",
+        gradient: "from-teal-600 to-green-700",
+        image: "/portfolio/projects/basys3-fpga.png",
     },
 ];
 
@@ -74,12 +90,30 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            className={`glass rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 ${project.featured ? "md:col-span-2 glow" : ""
+            className={`glass rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 relative ${project.featured ? "md:col-span-2 glow" : ""
                 }`}
         >
-            <div className={`h-2 bg-gradient-to-r ${project.gradient}`}></div>
+            {/* Green gradient background for featured project */}
+            {project.featured && (
+                <div className="absolute inset-0 bg-gradient-to-br from-green-600/30 via-emerald-600/20 to-green-900/10 pointer-events-none"></div>
+            )}
 
-            <div className="p-6 md:p-8">
+            <div className={`h-2 bg-gradient-to-r ${project.gradient} relative z-10`}></div>
+
+            {/* Project Image */}
+            {project.image && (
+                <div className="relative w-full h-64 md:h-80 overflow-hidden bg-black/20">
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                </div>
+            )}
+
+            <div className="p-6 md:p-8 relative z-10">
                 <div className="mb-4">
                     {project.featured && (
                         <span className="inline-block px-3 py-1 text-xs font-semibold gradient-bg text-white rounded-full mb-3">
@@ -146,10 +180,12 @@ export default function Projects() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="projects" className="section-padding relative overflow-hidden bg-black/30">
+        <section id="projects" className="section-padding relative overflow-hidden bg-black/30 flex justify-center">
+            {/* Green animated gradient background like hero section */}
+            <div className="absolute inset-0 animated-gradient opacity-20"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-10"></div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
                     ref={ref}
                     initial={{ opacity: 0, y: 20 }}
@@ -158,11 +194,8 @@ export default function Projects() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
-                        Featured <span className="gradient-text">Projects</span>
+                        <span className="gradient-text">Projects</span>
                     </h2>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        From AI research assistants to hardware design - showcasing full-stack engineering
-                    </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

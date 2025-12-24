@@ -59,23 +59,27 @@ export default function Navigation() {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-lg" : "bg-transparent"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* ============================================
               LOGO / NAME
               ============================================ */}
                     <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className="text-xl font-bold font-heading cursor-pointer"
+                        className="cursor-pointer"
                         onClick={() => scrollToSection("#home")}
                     >
-                        <span className="gradient-text">AF</span>
+                        <img
+                            src="/portfolio/af-logo.png"
+                            alt="AF Logo"
+                            className="h-10 w-auto"
+                        />
                     </motion.div>
 
                     {/* ============================================
               DESKTOP NAVIGATION LINKS
               ============================================ */}
-                    <div className="hidden md:flex space-x-8">
+                    <div className="hidden md:flex gap-8 ml-auto">
                         {navLinks.map((link, index) => (
                             <motion.button
                                 key={link.name}

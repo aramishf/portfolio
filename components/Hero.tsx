@@ -34,7 +34,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center justify-center relative overflow-hidden"
+            className="h-auto min-h-screen flex items-center justify-center relative overflow-hidden py-32"
         >
             <div className="absolute inset-0 animated-gradient opacity-20"></div>
             <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
@@ -45,37 +45,39 @@ export default function Hero() {
                 initial="hidden"
                 animate="visible"
                 className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+                style={{ paddingTop: '12rem' }}
             >
                 <motion.h1
                     variants={itemVariants}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-heading mb-6"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-heading"
+                    style={{ marginBottom: '0.75rem' }}
                 >
                     <span className="gradient-text">Aramish Farooq</span>
                 </motion.h1>
 
                 <motion.h2
                     variants={itemVariants}
-                    className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 font-medium"
+                    className="text-base sm:text-lg md:text-xl text-gray-300 font-medium"
+                    style={{ marginBottom: '1.5rem' }}
                 >
-                    Computer Engineering @ SJSU | U.S. Dept of Energy Research Intern |{" "}
-                    <span className="text-primary">Aspiring ML Engineer</span>
+                    Computer Engineering @ SJSU
                 </motion.h2>
 
                 <motion.p
                     variants={itemVariants}
-                    className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
+                    className="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed"
+                    style={{ marginBottom: '2rem' }}
                 >
-                    Specialized in{" "}
+                    Passionate about{" "}
                     <span className="text-accent font-semibold">
-                        bridging the gap between hardware architecture and applied Machine Learning
+                        AI/ML and hardware engineering
                     </span>
-                    . Currently researching atmospheric aerosol modeling using deep learning while
-                    pursuing my degree at San José State.
                 </motion.p>
 
                 <motion.div
                     variants={itemVariants}
-                    className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
+                    style={{ marginBottom: '8rem' }}
                 >
                     <button
                         onClick={() => scrollToSection("#projects")}

@@ -9,7 +9,7 @@ export default function Contact() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     const [copied, setCopied] = useState(false);
 
-    const email = "aramish.farooq@sjsu.edu";
+    const email = "farooqaramish@gmail.com";
 
     const copyEmail = () => {
         navigator.clipboard.writeText(email);
@@ -22,24 +22,24 @@ export default function Contact() {
             name: "GitHub",
             icon: FaGithub,
             url: "https://github.com/aramishf",
-            color: "hover:text-purple-400",
+            color: "hover:text-green-400",
         },
         {
             name: "LinkedIn",
             icon: FaLinkedin,
             url: "https://linkedin.com/in/aramishfarooq",
-            color: "hover:text-blue-400",
+            color: "hover:text-emerald-400",
         },
         {
             name: "Email",
             icon: FaEnvelope,
             url: `mailto:${email}`,
-            color: "hover:text-cyan-400",
+            color: "hover:text-teal-400",
         },
     ];
 
     return (
-        <section id="contact" className="section-padding relative overflow-hidden">
+        <section id="contact" className="section-padding relative overflow-hidden bg-black/20 flex justify-center">
             <div className="absolute inset-0 animated-gradient opacity-10"></div>
             <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-20"></div>

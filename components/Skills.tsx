@@ -105,7 +105,7 @@ export default function Skills() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="skills" className="section-padding relative overflow-hidden">
+        <section id="skills" className="section-padding relative overflow-hidden bg-black/10 flex justify-center">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent rounded-full blur-3xl opacity-10"></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -119,7 +119,7 @@ export default function Skills() {
                     <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
                         Skills & <span className="gradient-text">Expertise</span>
                     </h2>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto text-center">
                         A diverse toolkit spanning software, AI/ML, and hardware engineering
                     </p>
                 </motion.div>

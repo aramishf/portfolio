@@ -18,30 +18,69 @@ import { FaBriefcase, FaChalkboardTeacher } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "CCI Research Intern",
-        company: "U.S. Department of Energy",
-        period: "2024 - Present",
+        title: "AI Content Specialist (Conversational AI)",
+        company: "Handshake",
+        period: "Dec 2025 - Present",
         icon: FaBriefcase,
-        problem:
-            "Analyzing complex vertical profiles of meteorological and aerosol data from ARM Observatories required efficient processing of multi-instrument datasets.",
-        solution:
-            "Built Python pipelines using NetCDF4 and Pandas to process multi-instrument data from Lidar, Radar, and iMet sensors.",
-        impact:
-            "Developed LSTM and XGBoost models to predict aerosol particle concentrations (10 nm – 3 μm) with high accuracy, advancing atmospheric research capabilities.",
-        tech: ["Python", "NetCDF4", "Pandas", "LSTM", "XGBoost", "RandomizedSearchCV"],
+        description:
+            "Optimizing LLMs through RLHF training and expert persona simulation, generating diverse conversational datasets to improve AI response quality.",
+        highlights: [
+            "Conducted 100+ recorded sessions for model training data",
+            "Simulated expert personas in AI/ML domains for Q&A evaluation",
+        ],
+        tech: ["AI Training", "RLHF", "Prompt Engineering", "NLP"],
+    },
+    {
+        title: "Tech Intern",
+        company: "Pacific Northwest National Laboratory (U.S. DOE)",
+        period: "Jan 2025 - Jun 2025",
+        icon: FaBriefcase,
+        description:
+            "Developed ML models to predict aerosol size distributions, creating low-cost alternatives to traditional atmospheric sampling methods.",
+        highlights: [
+            "Built Random Forest, XGBoost, and LSTM models for particle prediction (<135 nm)",
+            "Visualized aerosol trends (10 nm – 3 μm) using Matplotlib and Seaborn",
+        ],
+        tech: ["Python", "Random Forest", "XGBoost", "LSTM", "Pandas"],
+    },
+    {
+        title: "College Intern",
+        company: "Pacific Northwest National Laboratory (U.S. DOE)",
+        period: "Aug 2024 - Dec 2024",
+        icon: FaBriefcase,
+        description:
+            "Built ML models and interactive GUI tool for predicting vertical aerosol concentration from ground-based atmospheric measurements.",
+        highlights: [
+            "Developed Tkinter GUI for real-time aerosol predictions",
+            "Collaborated remotely with atmospheric scientists on modeling efforts",
+        ],
+        tech: ["Python", "scikit-learn", "Tkinter", "Pandas"],
     },
     {
         title: "Mathematics Tutor",
-        company: "Private Tutoring",
-        period: "2022 - Present",
+        company: "Diablo Valley College",
+        period: "Aug 2024 - Dec 2024",
         icon: FaChalkboardTeacher,
-        problem:
-            "Students struggled with conceptual understanding in Calculus I/II and Algebra, needing step-by-step logical explanations.",
-        solution:
-            "Provided personalized tutoring sessions focusing on breaking down complex concepts into digestible steps.",
-        impact:
-            "Developed strong communication and problem-solving skills that directly translate to debugging complex code and explaining technical concepts.",
-        tech: ["Calculus", "Algebra", "Problem Solving", "Communication"],
+        description:
+            "Provided one-on-one and small group tutoring in Algebra I/II, Precalculus, and Calculus I/II, helping students build confidence and improve grades.",
+        highlights: [
+            "Taught problem-solving strategies and critical thinking techniques",
+            "Strengthened communication and adaptive teaching skills",
+        ],
+        tech: ["Calculus", "Algebra", "Communication"],
+    },
+    {
+        title: "Volunteer",
+        company: "Ahmadiyya Muslim Community",
+        period: "Jun 2014 - Present",
+        icon: FaChalkboardTeacher,
+        description:
+            "11+ years of community service including environmental cleanups, food drives, and charity programs supporting underprivileged families.",
+        highlights: [
+            "Organized and executed sustainability and beautification initiatives",
+            "Contributed to combating food insecurity through consistent service",
+        ],
+        tech: ["Community Service", "Leadership", "Teamwork"],
     },
 ];
 
@@ -66,12 +105,9 @@ function ExperienceCard({ experience, index }: { experience: typeof experiences[
             {/* Timeline dot */}
             <div className="absolute left-0 top-8 w-4 h-4 bg-primary rounded-full -translate-x-1.5 hidden md:block glow"></div>
 
-            <div className="md:ml-12 glass rounded-2xl p-6 md:p-8 hover:scale-[1.02] transition-transform duration-300">
+            <div className="glass rounded-2xl p-6 md:p-8 hover:scale-[1.02] transition-transform duration-300" style={{ paddingLeft: '64px' }}>
                 {/* Header */}
                 <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 gradient-bg rounded-lg">
-                        <experience.icon className="text-white" size={24} />
-                    </div>
                     <div className="flex-1">
                         <h3 className="text-2xl font-bold font-heading text-foreground">
                             {experience.title}
@@ -81,20 +117,17 @@ function ExperienceCard({ experience, index }: { experience: typeof experiences[
                     </div>
                 </div>
 
-                {/* Problem/Solution/Impact */}
-                <div className="space-y-4 mb-6">
-                    <div>
-                        <h4 className="text-sm font-semibold text-red-400 mb-1">The Problem</h4>
-                        <p className="text-gray-300">{experience.problem}</p>
-                    </div>
-                    <div>
-                        <h4 className="text-sm font-semibold text-blue-400 mb-1">The Solution</h4>
-                        <p className="text-gray-300">{experience.solution}</p>
-                    </div>
-                    <div>
-                        <h4 className="text-sm font-semibold text-green-400 mb-1">The Impact</h4>
-                        <p className="text-gray-300">{experience.impact}</p>
-                    </div>
+                {/* Description & Highlights */}
+                <div className="mb-6">
+                    <p className="text-gray-300 mb-4 leading-relaxed">{experience.description}</p>
+                    <ul className="space-y-2">
+                        {experience.highlights.map((highlight, i) => (
+                            <li key={i} className="text-sm text-gray-400 flex items-start">
+                                <span className="text-primary mr-2">▹</span>
+                                <span>{highlight}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
                 {/* Tech Stack */}
@@ -121,11 +154,11 @@ export default function Experience() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="experience" className="section-padding relative overflow-hidden">
+        <section id="experience" className="section-padding relative overflow-hidden bg-black/15 flex justify-center">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-10"></div>
 
-            <div className="max-w-5xl mx-auto relative z-10">
+            <div className="max-w-4xl mx-auto relative z-10">
                 {/* Section Header */}
                 <motion.div
                     ref={ref}
@@ -137,9 +170,6 @@ export default function Experience() {
                     <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
                         Work <span className="gradient-text">Experience</span>
                     </h2>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Bridging research, education, and real-world problem solving
-                    </p>
                 </motion.div>
 
                 {/* Experience Timeline */}
