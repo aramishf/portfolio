@@ -31,6 +31,22 @@ const projects = [
         image: "/projects/rag-assistant.png",
     },
     {
+        title: "Finger Counter - Real-Time Hand Gesture Recognition",
+        subtitle: "Computer Vision Application",
+        description:
+            "Real-time hand tracking application that accurately counts fingers using computer vision and machine learning for gesture recognition.",
+        highlights: [
+            "Real-time hand detection and tracking using MediaPipe's Hand Landmarker model",
+            "Accurate finger counting algorithm distinguishing between extended and folded fingers",
+            "Live visual feedback with hand landmark visualization and connection lines",
+        ],
+        tech: [{ name: "Python", icon: SiPython }],
+        github: "https://github.com/aramishf/FingerCounter",
+        featured: false,
+        gradient: "from-emerald-600 to-green-600",
+        image: "/projects/finger-counter.png",
+    },
+    {
         title: "Aerosol Particle ML Predictor",
         subtitle: "Research Application",
         description:
