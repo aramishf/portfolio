@@ -31,7 +31,7 @@ const experiences = [
         tech: ["AI Training", "RLHF", "Prompt Engineering", "NLP"],
     },
     {
-        title: "Applied Machine Learning Research Engineer Intern",
+        title: "Machine Learning Research Engineer Intern",
         company: "Pacific Northwest National Laboratory (U.S. DOE)",
         period: "Jan 2025 - Jun 2025",
         icon: FaBriefcase,
@@ -44,7 +44,7 @@ const experiences = [
         tech: ["Python", "Random Forest", "XGBoost", "LSTM", "Pandas"],
     },
     {
-        title: "Machine Learning/AI Engineer",
+        title: "Machine Learning/AI Engineer Intern",
         company: "Pacific Northwest National Laboratory (U.S. DOE)",
         period: "Aug 2024 - Dec 2024",
         icon: FaBriefcase,
