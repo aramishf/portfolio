@@ -47,6 +47,22 @@ const projects = [
         image: "/projects/finger-counter.png",
     },
     {
+        title: "AI Virtual Painter",
+        subtitle: "Interactive Gesture-Based Drawing",
+        description:
+            "Interactive virtual painting application that enables users to create digital art using hand gestures captured through webcam with real-time tracking.",
+        highlights: [
+            "Real-time hand gesture recognition using MediaPipe's 21 landmark hand tracking model",
+            "Multiple drawing modes: draw with index finger, select colors with two fingers, erase with five fingers",
+            "5 vibrant colors with intuitive UI featuring 160px color boxes and dual eraser system (50px/100px)",
+        ],
+        tech: [{ name: "Python", icon: SiPython }],
+        github: "https://github.com/aramishf/VirtualPainter",
+        featured: false,
+        gradient: "from-purple-600 to-pink-600",
+        image: "/projects/virtual-painter.png",
+    },
+    {
         title: "Aerosol Particle ML Predictor",
         subtitle: "Research Application",
         description:
