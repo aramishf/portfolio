@@ -79,6 +79,22 @@ const projects = [
         image: "/projects/cpc-predictor.png",
     },
     {
+        title: "Custom Gaming PC Builds & Hardware Testing",
+        subtitle: "Hardware Engineering & Diagnostics",
+        description:
+            "Specialized in building high-performance gaming computers and providing comprehensive hardware diagnostics, testing, and troubleshooting services.",
+        highlights: [
+            "Assembled 15+ custom gaming PCs with optimized component selection for performance and compatibility",
+            "Diagnosed and resolved complex hardware failures including GPU, RAM, motherboard, and power supply issues",
+            "Performed extensive stress testing, benchmarking, and thermal analysis to ensure system stability",
+        ],
+        tech: [],
+        github: "#",
+        featured: false,
+        gradient: "from-blue-600 to-cyan-600",
+        image: "/hardware-testing.png",
+    },
+    {
         title: "Custom PCB Audio Amplifier",
         subtitle: "Hardware Design & Fabrication",
         description:

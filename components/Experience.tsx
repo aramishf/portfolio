@@ -70,6 +70,20 @@ const experiences = [
         tech: ["Calculus", "Algebra", "Communication"],
     },
     {
+        title: "Computer Hardware Specialist",
+        company: "Independent",
+        period: "2018 - Present",
+        icon: FaBriefcase,
+        description:
+            "Built custom gaming PCs and provided hardware diagnostics and repair services for friends and personal projects, specializing in component compatibility, performance optimization, and troubleshooting.",
+        highlights: [
+            "Assembled 15+ custom gaming computers with optimized component selection",
+            "Diagnosed and resolved hardware failures including GPU, RAM, and motherboard issues",
+            "Performed stress testing and benchmarking to ensure system stability and performance",
+        ],
+        tech: ["PC Building", "Hardware Diagnostics", "Performance Testing", "Troubleshooting"],
+    },
+    {
         title: "Volunteer",
         company: "Ahmadiyya Muslim Community",
         period: "Jun 2014 - Present",
