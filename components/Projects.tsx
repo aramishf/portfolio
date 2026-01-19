@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { FaGithub } from "react-icons/fa";
+import { useRef, useState } from "react";
+import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { SiPython, SiReact, SiTypescript, SiNextdotjs, SiFastapi, SiDocker } from "react-icons/si";
 import Image from "next/image";
 
@@ -11,11 +11,12 @@ const projects = [
         title: "RAG-Based Document Analysis System",
         subtitle: "AI Research Assistant",
         description:
-            "AI research assistant for PDF analysis with citation-backed answers using RAG architecture and local LLM inference.",
+            "Sophisticated, production-ready research tool with Structured Reasoning and Chain-of-Thought logic, designed for strict evidence-based analysis.",
         highlights: [
-            "RAG architecture with FAISS vector database and LLaMA 3 integration",
-            "Multi-user authentication with JWT and real-time chat interface",
-            "Strict prompting to prevent hallucinations and ensure evidence-based responses",
+            "Literal Extraction mode: AI must find and quote exact text before answering",
+            "4-step Chain-of-Thought (CoT) internal process (Extraction → Analysis → Gap Identification → Synthesis)",
+            "Strict Zero-External Knowledge guardrails for academic/religious research",
+            "Containerized RAG Pipeline with Docker for easy deployment",
         ],
         tech: [
             { name: "Next.js", icon: SiNextdotjs },
@@ -28,7 +29,8 @@ const projects = [
         github: "https://github.com/aramishf/portfolio",
         featured: true,
         gradient: "from-green-600 to-emerald-600",
-        image: "/projects/rag-assistant.png",
+        images: ["/projects/rag-home.png", "/projects/rag-logic.png"],
+        image: "/projects/rag-home.png", // Fallback/primary
     },
     {
         title: "Finger Counter - Real-Time Hand Gesture Recognition",
@@ -128,9 +130,20 @@ const projects = [
     },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index }: { project: typeof projects[0] & { images?: string[] }; index: number }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const images = project.images || (project.image ? [project.image] : []);
+
+    const nextImage = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
 
     return (
         <motion.div
@@ -148,16 +161,50 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
             <div className={`h-2 bg-gradient-to-r ${project.gradient} relative z-10`}></div>
 
-            {/* Project Image */}
-            {project.image && (
-                <div className="relative w-full h-64 md:h-80 overflow-hidden bg-black/20">
+            {/* Project Image Area */}
+            {images.length > 0 && (
+                <div className="relative w-full h-64 md:h-96 overflow-hidden bg-black/20 group">
                     <Image
-                        src={project.image}
+                        src={images[currentImageIndex]}
                         alt={project.title}
                         fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        className="object-cover transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
+                    
+                    {/* Carousel Controls */}
+                    {images.length > 1 && (
+                        <>
+                            <button 
+                                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70 z-20"
+                                aria-label="Previous image"
+                            >
+                                <FaChevronLeft size={20} />
+                            </button>
+                            <button 
+                                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70 z-20"
+                                aria-label="Next image"
+                            >
+                                <FaChevronRight size={20} />
+                            </button>
+                            
+                            {/* Dots Indicator */}
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                                {images.map((_, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                                        className={`w-2 h-2 rounded-full transition-all ${
+                                            idx === currentImageIndex ? "bg-white w-4" : "bg-white/50 hover:bg-white/80"
+                                        }`}
+                                        aria-label={`Go to image ${idx + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </>
+                    )}
                 </div>
             )}
 
