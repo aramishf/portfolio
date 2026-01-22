@@ -188,7 +188,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0] & { image
                         src={images[currentImageIndex]}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-500"
+                        className="object-contain transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
 
