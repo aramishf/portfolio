@@ -8,6 +8,26 @@ import Image from "next/image";
 
 const projects = [
     {
+        title: "Silent Voice Bridge",
+        subtitle: "Real-Time ASL-to-English Translator",
+        description:
+            "Silent Voice Bridge is an accessibility tool designed to bridge the communication gap for the Deaf and Hard of Hearing community. It uses computer vision to translate American Sign Language (ASL) fingerspelling into English text in real-time.",
+        highlights: [
+            "Real-Time AI Rendering: Utilizes MediaPipe and WebSockets for <100ms latency",
+            "Zero-Distraction UI: Fixed Viewport (100vh) layout with high-contrast \"Dark Mode\"",
+            "Accessibility-First Design: Features \"Cyber Purple\" gradients and glassmorphism",
+        ],
+        tech: [
+            { name: "React", icon: SiReact },
+            { name: "Python", icon: SiPython },
+            { name: "FastAPI", icon: SiFastapi },
+        ],
+        github: "#",
+        featured: true,
+        gradient: "from-purple-600 to-pink-600",
+        image: "/silent-voice-bridge.png",
+    },
+    {
         title: "RAG-Based Document Analysis System",
         subtitle: "AI Research Assistant",
         description:
@@ -171,34 +191,33 @@ function ProjectCard({ project, index }: { project: typeof projects[0] & { image
                         className="object-cover transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    
+
                     {/* Carousel Controls */}
                     {images.length > 1 && (
                         <>
-                            <button 
+                            <button
                                 onClick={(e) => { e.stopPropagation(); prevImage(); }}
                                 className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70 z-20"
                                 aria-label="Previous image"
                             >
                                 <FaChevronLeft size={20} />
                             </button>
-                            <button 
+                            <button
                                 onClick={(e) => { e.stopPropagation(); nextImage(); }}
                                 className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70 z-20"
                                 aria-label="Next image"
                             >
                                 <FaChevronRight size={20} />
                             </button>
-                            
+
                             {/* Dots Indicator */}
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                                 {images.map((_, idx) => (
                                     <button
                                         key={idx}
                                         onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
-                                        className={`w-2 h-2 rounded-full transition-all ${
-                                            idx === currentImageIndex ? "bg-white w-4" : "bg-white/50 hover:bg-white/80"
-                                        }`}
+                                        className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIndex ? "bg-white w-4" : "bg-white/50 hover:bg-white/80"
+                                            }`}
                                         aria-label={`Go to image ${idx + 1}`}
                                     />
                                 ))}
