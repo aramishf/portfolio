@@ -13,9 +13,9 @@ const projects = [
         description:
             "Silent Voice Bridge is an accessibility tool designed to bridge the communication gap for the Deaf and Hard of Hearing community. It uses computer vision to translate American Sign Language (ASL) fingerspelling into English text in real-time.",
         highlights: [
-            "Real-Time AI Rendering: Utilizes MediaPipe and WebSockets for <100ms latency",
-            "Zero-Distraction UI: Fixed Viewport (100vh) layout with high-contrast \"Dark Mode\"",
-            "Accessibility-First Design: Features \"Cyber Purple\" gradients and glassmorphism",
+            "Architecture: Engineered a low-latency WebSocket pipeline connecting a React frontend to a high-performance Python FastAPI backend.",
+            "Computer Vision: Integrated MediaPipe Hands to extract 21 3D landmarks in real-time for precise fingerspelling detection.",
+            "Translation Logic: Implemented custom confidence algorithms to map skeletal data to English characters with <100ms inference time.",
         ],
         tech: [
             { name: "React", icon: SiReact },
@@ -33,10 +33,9 @@ const projects = [
         description:
             "Sophisticated, production-ready research tool with Structured Reasoning and Chain-of-Thought logic, designed for strict evidence-based analysis.",
         highlights: [
-            "Literal Extraction mode: AI must find and quote exact text before answering",
-            "4-step Chain-of-Thought (CoT) internal process (Extraction → Analysis → Gap Identification → Synthesis)",
-            "Strict Zero-External Knowledge guardrails for academic/religious research",
-            "Containerized RAG Pipeline with Docker for easy deployment",
+            "Dockerized Pipeline: Built a fully containerized architecture using Docker, ensuring reproducible environments for the Python/FastAPI backend.",
+            "Structured Reasoning: Developed a 4-step Chain-of-Thought (CoT) engine that strictly validates claims against source text before synthesizing answers.",
+            "Guardrails: Implemented \"Zero-External Knowledge\" logic to force the LLM to rely solely on retrieved vector context.",
         ],
         tech: [
             { name: "Next.js", icon: SiNextdotjs },
@@ -58,9 +57,9 @@ const projects = [
         description:
             "Real-time hand tracking application that accurately counts fingers using computer vision and machine learning for gesture recognition.",
         highlights: [
-            "Real-time hand detection and tracking using MediaPipe's Hand Landmarker model",
-            "Accurate finger counting algorithm distinguishing between extended and folded fingers",
-            "Live visual feedback with hand landmark visualization and connection lines",
+            "Landmark Detection: Used MediaPipe's Hand Landmarker model to identify 21 keypoints per hand in continuous video streams.",
+            "Geometric Analysis: Developed a counting algorithm that compares fingertip-to-wrist and fingertip-to-knuckle vectors to detect extended fingers.",
+            "Optimization: Optimized the detection loop to run smoothly on standard CPUs using lightweight OpenCV rendering.",
         ],
         tech: [{ name: "Python", icon: SiPython }],
         github: "https://github.com/aramishf/FingerCounter",
@@ -74,9 +73,9 @@ const projects = [
         description:
             "Interactive virtual painting application that enables users to create digital art using hand gestures captured through webcam with real-time tracking.",
         highlights: [
-            "Real-time hand gesture recognition using MediaPipe's 21 landmark hand tracking model",
-            "Multiple drawing modes: draw with index finger, select colors with two fingers, erase with five fingers",
-            "5 vibrant colors with intuitive UI featuring 160px color boxes and dual eraser system (50px/100px)",
+            "Gesture Recognition: Leveraged MediaPipe to track hand landmarks for real-time cursor control and gesture detection.",
+            "State Logic: Programmed geometric heuristics to switch between \"Drawing\" (Index Up) and \"Selection\" (Index + Middle Up) modes based on landmark coordinates.",
+            "Canvas Processing: Utilized OpenCV and NumPy for efficient image masking and weighted overlays to render drawing strokes without lag.",
         ],
         tech: [{ name: "Python", icon: SiPython }],
         github: "https://github.com/aramishf/VirtualPainter",
