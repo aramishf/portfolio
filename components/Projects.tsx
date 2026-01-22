@@ -15,7 +15,7 @@ const projects = [
         highlights: [
             "Architecture: Engineered a low-latency WebSocket pipeline connecting a React frontend to a high-performance Python FastAPI backend.",
             "Computer Vision: Integrated MediaPipe Hands to extract 21 3D landmarks in real-time for precise fingerspelling detection.",
-            "Translation Logic: Implemented custom confidence algorithms to map skeletal data to English characters with <100ms inference time.",
+            "LSTM Engine: Trained a custom LSTM model on self-collected datasets (A-Z, 0-9) of normalized landmark arrays for robust real-world inference.",
         ],
         tech: [
             { name: "React", icon: SiReact },
