@@ -304,7 +304,7 @@ export default function Projects() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-24"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4">
                         <span className="gradient-text">Projects</span>
