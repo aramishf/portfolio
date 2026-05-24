@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const projects = [
     {
-        title: "GI SDLC Agentic AI",
+        title: "Git SDLC Agentic AI",
         subtitle: "Autonomous AI Coding Agent",
         description:
             "Built an autonomous AI coding agent using LangGraph that acts like a junior developer to automate the software debugging lifecycle.",
@@ -62,6 +62,7 @@ const projects = [
         github: "#",
         featured: true,
         gradient: "from-purple-600 to-pink-600",
+        images: ["/silent-voice-bridge.png", "/silent-voice-bridge.mov"],
         image: "/silent-voice-bridge.png",
     },
     {
@@ -221,13 +222,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0] & { image
             {/* Project Image Area */}
             {images.length > 0 && (
                 <div className="relative w-full h-64 md:h-96 overflow-hidden bg-black/20 group">
-                    <Image
-                        src={images[currentImageIndex]}
-                        alt={project.title}
-                        fill
-                        className="object-contain transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    {images[currentImageIndex].endsWith(".mov") || images[currentImageIndex].endsWith(".mp4") ? (
+                        <video
+                            src={images[currentImageIndex]}
+                            controls
+                            className="w-full h-full object-contain"
+                            playsInline
+                        />
+                    ) : (
+                        <Image
+                            src={images[currentImageIndex]}
+                            alt={project.title}
+                            fill
+                            className="object-contain transition-transform duration-500"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                    )}
 
                     {/* Carousel Controls */}
                     {images.length > 1 && (
