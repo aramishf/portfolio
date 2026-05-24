@@ -5,26 +5,22 @@
    ============================================ */
 :root {
   /* Background Colors */
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #0f172a;
+  --foreground: #f8fafc;
 
-  /* Brand Colors - Forest Sage Green Theme */
-  --primary: #6B8E6F;
-  /* Sage Green */
-  --primary-dark: #5A7A5E;
-  /* Darker Sage Green */
-  --secondary: #4A5D4E;
-  /* Dark Grey-Green */
-  --accent: #8FAA92;
-  /* Light Sage Green */
+  /* Brand Colors - Professional Blue Theme */
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #1e293b;
+  --accent: #60a5fa;
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6B8E6F 0%, #8FAA92 100%);
-  --gradient-accent: linear-gradient(135deg, #5A7A5E 0%, #6B8E6F 100%);
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --gradient-accent: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
 }
 
 /* ============================================
@@ -99,10 +95,10 @@ body {
 /* Animated Gradient Background */
 .animated-gradient {
   background: linear-gradient(-45deg,
-      #6B8E6F,
-      #5A7A5E,
-      #8FAA92,
-      #6B8E6F);
+      #1e3a8a,
+      #1e40af,
+      #2563eb,
+      #1e3a8a);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
@@ -123,13 +119,13 @@ body {
 
 /* Glow Effect */
 .glow {
-  box-shadow: 0 0 20px rgba(107, 142, 111, 0.3),
-    0 0 40px rgba(107, 142, 111, 0.2);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.2);
 }
 
 .glow-hover:hover {
-  box-shadow: 0 0 30px rgba(107, 142, 111, 0.5),
-    0 0 60px rgba(107, 142, 111, 0.3);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5),
+    0 0 60px rgba(59, 130, 246, 0.3);
   transition: box-shadow 0.3s ease;
 }
 

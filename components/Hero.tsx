@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
+import Image from "next/image";
 
 export default function Hero() {
     const containerVariants = {
@@ -47,6 +48,21 @@ export default function Hero() {
                 className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
                 style={{ paddingTop: '12rem' }}
             >
+                <motion.div
+                    variants={itemVariants}
+                    className="mb-8 flex justify-center"
+                >
+                    <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl glow">
+                        <Image
+                            src="/headshot.jpg"
+                            alt="Aramish Farooq"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
+                </motion.div>
+
                 <motion.h1
                     variants={itemVariants}
                     className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-heading"

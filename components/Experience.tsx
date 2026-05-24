@@ -18,83 +18,102 @@ import { FaBriefcase, FaChalkboardTeacher } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "AI Content Specialist (Conversational AI)",
+        title: "Machine Learning Engineer (Payload Subsystems)",
+        company: "SpartanSat",
+        period: "Apr 2026 - Present",
+        icon: FaBriefcase,
+        description:
+            "Developing an onboard pipeline for a NASA-supported CubeSat mission to automatically identify lunar crescent phases using illuminated fraction algorithms.",
+        highlights: [
+            "Deploying IllumiCurveNet on NVIDIA Jetson Orin Nano to reconstruct high-detail imagery of the Moon's dark side.",
+            "Engineering a 200:1 compression architecture, shrinking 3.3GB of raw lunar video to 60MB for satellite downlink.",
+            "Working on a lunar limb detection model to extract geometric features for autonomous positioning in deep space."
+        ],
+        tech: ["Edge AI", "Embedded Systems", "Computer Vision", "OpenCV", "PyTorch"],
+    },
+    {
+        title: "AI/LLM Evaluation & Data Specialist",
         company: "Handshake",
         period: "Dec 2025 - Present",
         icon: FaBriefcase,
         description:
-            "Optimizing LLMs through RLHF training and expert persona simulation, generating diverse conversational datasets to improve AI response quality.",
+            "Evaluating and fine-tuning advanced AI models through human-in-the-loop data analysis and RLHF.",
         highlights: [
-            "Conducted 100+ recorded sessions for model training data",
-            "Simulated expert personas in AI/ML domains for Q&A evaluation",
+            "Reviewing model reasoning, voice-to-voice conversation dynamics, and complex image-generation instructions.",
+            "Conducted many recorded conversational sessions to provide diverse, natural language datasets for model training.",
+            "Acted as Subject Matter Expert in AI/ML domains to evaluate model performance in complex Q&A scenarios."
         ],
-        tech: ["AI Training", "RLHF", "Prompt Engineering", "NLP"],
+        tech: ["RLHF", "Human-in-the-Loop", "LLM Evaluation", "AI Training", "NLP"],
+    },
+    {
+        title: "Data Research Annotator",
+        company: "Prolific",
+        period: "Jan 2026 - Mar 2026",
+        icon: FaBriefcase,
+        description:
+            "Performed high-fidelity language assessments and provided human-in-the-loop feedback for academic and corporate AI research.",
+        highlights: [
+            "Validated Urdu/Hindi-English language data to improve translation accuracy and NLP model performance.",
+            "Provided detailed preference-based data and ranking to ensure data integrity for behavioral training sets.",
+            "Participated in UX/UI usability testing for emerging technologies like Smart Grid AR."
+        ],
+        tech: ["Data Validation", "HITL", "UX/UI Research", "NLP"],
     },
     {
         title: "Machine Learning Research Engineer Intern",
-        company: "Pacific Northwest National Laboratory (U.S. DOE)",
+        company: "Pacific Northwest National Laboratory",
         period: "Jan 2025 - Jun 2025",
         icon: FaBriefcase,
         description:
-            "Developed ML models to predict aerosol size distributions, creating low-cost alternatives to traditional atmospheric sampling methods.",
+            "Developed supervised ML models in Python to predict aerosol size distributions, contributing to climate research.",
         highlights: [
-            "Built Random Forest, XGBoost, and LSTM models for particle prediction (<135 nm)",
-            "Visualized aerosol trends (10 nm – 3 μm) using Matplotlib and Seaborn",
+            "Built Random Forest, XGBoost, and LSTM models focusing on particles <135 nm.",
+            "Processed and engineered features from high-quality ARM SGP datasets using Pandas and scikit-learn.",
+            "Visualized aerosol size distribution trends (10 nm – 3 μm) using Matplotlib and Seaborn."
         ],
-        tech: ["Python", "Random Forest", "XGBoost", "LSTM", "Pandas"],
+        tech: ["Python", "XGBoost", "LSTM", "Pandas", "scikit-learn"],
     },
     {
         title: "Machine Learning/AI Engineer Intern",
-        company: "Pacific Northwest National Laboratory (U.S. DOE)",
+        company: "Pacific Northwest National Laboratory",
         period: "Aug 2024 - Dec 2024",
         icon: FaBriefcase,
         description:
-            "Built ML models and interactive GUI tool for predicting vertical aerosol concentration from ground-based atmospheric measurements.",
+            "Developed ML models and built an interactive GUI tool for predicting vertical aerosol concentration from ground-based measurements.",
         highlights: [
-            "Developed Tkinter GUI for real-time aerosol predictions",
-            "Collaborated remotely with atmospheric scientists on modeling efforts",
+            "Handled data preprocessing and transformation of large meteorological datasets.",
+            "Built an interactive GUI tool in Tkinter for predicting aerosol concentration outputs.",
+            "Collaborated remotely with atmospheric scientists and engineers on aerosol modeling."
         ],
-        tech: ["Python", "scikit-learn", "Tkinter", "Pandas"],
+        tech: ["Python", "Machine Learning", "Tkinter", "Data Analysis"],
     },
     {
-        title: "Mathematics Tutor",
+        title: "Tutor & Volunteer",
         company: "Diablo Valley College",
-        period: "Aug 2024 - Dec 2024",
+        period: "Jan 2023 - Dec 2024",
         icon: FaChalkboardTeacher,
         description:
-            "Provided one-on-one and small group tutoring in Algebra I/II, Precalculus, and Calculus I/II, helping students build confidence and improve grades.",
+            "Tutored students in advanced mathematics and collaborated on project management initiatives.",
         highlights: [
-            "Taught problem-solving strategies and critical thinking techniques",
-            "Strengthened communication and adaptive teaching skills",
+            "Tutored Algebra I & II, Precalculus, and Calculus I & II in one-on-one and small group sessions.",
+            "Broke down complex math concepts and taught problem-solving strategies.",
+            "Collaborated with Project Bracket to design a board game, gaining insights into project management."
         ],
-        tech: ["Calculus", "Algebra", "Communication"],
+        tech: ["Calculus", "Leadership", "Communication", "Project Management"],
     },
     {
         title: "Computer Hardware Specialist",
         company: "Independent",
-        period: "2018 - Present",
+        period: "Jan 2018 - Present",
         icon: FaBriefcase,
         description:
-            "Built custom gaming PCs and provided hardware diagnostics and repair services for friends and personal projects, specializing in component compatibility, performance optimization, and troubleshooting.",
+            "Built custom gaming PCs and provided hardware diagnostics and repair services for clients.",
         highlights: [
-            "Assembled 15+ custom gaming computers with optimized component selection",
-            "Diagnosed and resolved hardware failures including GPU, RAM, and motherboard issues",
-            "Performed stress testing and benchmarking to ensure system stability and performance",
+            "Assembled 15+ custom gaming computers with optimized component selection.",
+            "Diagnosed and resolved hardware failures including GPU, RAM, and motherboard issues.",
+            "Performed stress testing and benchmarking to ensure system stability and performance."
         ],
-        tech: ["PC Building", "Hardware Diagnostics", "Performance Testing", "Troubleshooting"],
-    },
-    {
-        title: "Volunteer",
-        company: "Ahmadiyya Muslim Community",
-        period: "Jun 2014 - Present",
-        icon: FaChalkboardTeacher,
-        description:
-            "11+ years of community service including environmental cleanups, food drives, and charity programs supporting underprivileged families.",
-        highlights: [
-            "Organized and executed sustainability and beautification initiatives",
-            "Contributed to combating food insecurity through consistent service",
-        ],
-        tech: ["Community Service", "Leadership", "Teamwork"],
+        tech: ["PC Building", "Hardware Diagnostics", "Optimization", "Troubleshooting"],
     },
 ];
 

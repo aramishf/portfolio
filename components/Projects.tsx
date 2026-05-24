@@ -8,6 +8,43 @@ import Image from "next/image";
 
 const projects = [
     {
+        title: "GI SDLC Agentic AI",
+        subtitle: "Autonomous AI Coding Agent",
+        description:
+            "Built an autonomous AI coding agent using LangGraph that acts like a junior developer to automate the software debugging lifecycle.",
+        highlights: [
+            "Designed a stateful, multi-node workflow that ingests issue descriptions, parses local codebases, injects code fixes, and executes isolated pytest suites to verify correctness.",
+            "Engineered a simulation fallback mode using mock clients, allowing for end-to-end testing of the agent's routing logic without requiring live API credentials.",
+            "Automatically scans the project, identifies the file causing the issue, rewrites the code to fix the bug, and runs unit tests to prove the fix works."
+        ],
+        tech: [
+            { name: "Python", icon: SiPython },
+            { name: "LangGraph", icon: SiReact },
+            { name: "Google GenAI", icon: SiReact },
+        ],
+        github: "#",
+        featured: true,
+        gradient: "from-blue-600 to-indigo-600",
+    },
+    {
+        title: "SpartanSat Payload Subsystems",
+        subtitle: "NASA-Supported CubeSat Mission",
+        description:
+            "Developing an onboard pipeline for a NASA-supported CubeSat mission to automatically identify lunar crescent phases using illuminated fraction algorithms.",
+        highlights: [
+            "Deploying IllumiCurveNet on NVIDIA Jetson Orin Nano to reconstruct high-detail imagery of the Moon's dark side.",
+            "Engineering a 200:1 compression architecture, shrinking 3.3GB of raw lunar video to 60MB to fit strict satellite downlink limits.",
+            "Working on a lunar limb detection model to extract geometric features from enhanced images for autonomous positioning in deep space."
+        ],
+        tech: [
+            { name: "Edge AI", icon: SiPython },
+            { name: "Computer Vision", icon: SiPython },
+        ],
+        github: "#",
+        featured: true,
+        gradient: "from-slate-600 to-gray-800",
+    },
+    {
         title: "Silent Voice Bridge",
         subtitle: "Real-Time ASL-to-English Translator",
         description:
@@ -33,6 +70,7 @@ const projects = [
         description:
             "Sophisticated, production-ready research tool with Structured Reasoning and Chain-of-Thought logic, designed for strict evidence-based analysis.",
         highlights: [
+            "Vector Database: Migrated to Chroma DB for efficient vector storage and retrieval of document embeddings instead of FAISS.",
             "Dockerized Pipeline: Built a fully containerized architecture using Docker, ensuring reproducible environments for the Python/FastAPI backend.",
             "Structured Reasoning: Developed a 4-step Chain-of-Thought (CoT) engine that strictly validates claims against source text before synthesizing answers.",
             "Guardrails: Implemented \"Zero-External Knowledge\" logic to force the LLM to rely solely on retrieved vector context.",
